@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Dubbo+Boot下的分布式治理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="前言 这是本文的代码地址https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo欢迎各位star  Dubbo背景随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演">
+<meta name="keywords" content="随笔,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dubbo+Boot下的分布式治理">
+<meta property="og:url" content="http://yoursite.com/2019/07/15/Dubbo+Boot下的分布式治理/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言 这是本文的代码地址https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo欢迎各位star  Dubbo背景随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190712111732968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190712112523991.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190712125308518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019071213190743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019071213221377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-07-15T10:48:00.305Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Dubbo+Boot下的分布式治理">
+<meta name="twitter:description" content="前言 这是本文的代码地址https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo欢迎各位star  Dubbo背景随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190712111732968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -176,36 +187,142 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Dubbo+Boot下的分布式治理" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Dubbo+Boot下的分布式治理
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Dubbo+Boot下的分布式治理/" class="archive-article-date">
+
+        
+        <a href="/2019/07/15/Dubbo+Boot下的分布式治理/" class="archive-article-date">
   	<time datetime="2019-07-15T10:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Dubbo+Boot下的分布式治理/">Dubbo+Boot下的分布式治理</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>这是本文的代码地址<br><a href="https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo" target="_blank" rel="noopener">https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo</a><br>欢迎各位star</p>
+</blockquote>
+<h2 id="Dubbo背景"><a href="#Dubbo背景" class="headerlink" title="Dubbo背景"></a>Dubbo背景</h2><p>随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演进。<br><img src="https://img-blog.csdnimg.cn/20190712111732968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<a id="more"></a>
+<p><strong>单片架构</strong><br>当流量非常低时，只有一个应用程序，所有功能都部署在一起，以减少部署节点和成本。此时，数据访问框架（ORM）是简化CRUD工作负载的关键。</p>
+<p><strong>垂直建筑</strong><br>当流量变大时，添加单片应用程序实例无法很好地加速访问，提高效率的一种方法是将单片机拆分为离散应用程序。此时，用于加速前端页面开发的Web框架（MVC）是关键。</p>
+<p><strong>分布式服务架构</strong><br>当越来越多的垂直应用程序，应用程序之间的交互是不可避免的，一些核心业务被提取并作为独立服务，逐步形成一个稳定的服务中心，这样前端应用程序可以更多地响应市场需求的变化很快。此时，用于业务重用和集成的分布式服务框架（RPC）是关键。</p>
+<p><strong>流量计算架构</strong><br>当服务越来越多时，容量评估变得困难，小规模的服务也经常导致资源浪费。为了解决这些问题，应该添加一个调度中心来管理基于流量的集群容量，并提高集群的利用率。此时，用于提高机器利用率的资源调度和治理中心（SOA）是关键。</p>
+<p>以上来自官方介绍</p>
+<h2 id="Dubbo版本介绍"><a href="#Dubbo版本介绍" class="headerlink" title="Dubbo版本介绍"></a>Dubbo版本介绍</h2><p>已发布最新版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.dubbo&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;dubbo-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.7.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<p>历史版本<br><img src="https://img-blog.csdnimg.cn/20190712112523991.png" alt="在这里插入图片描述"><br>在最新版本的整合时会有些错误，还需要结合官方解决方案，本文采用的是历史版本</p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p><img src="https://img-blog.csdnimg.cn/20190712125308518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="相关依赖"><a href="#相关依赖" class="headerlink" title="相关依赖"></a>相关依赖</h2><h4 id="父POM"><a href="#父POM" class="headerlink" title="父POM"></a>父POM</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;javayh-cloud&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;relativePath&gt;../&lt;/relativePath&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line">    &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;javayh-dubbo&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;name&gt;javayh-dubbo&lt;/name&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</span><br><span class="line">        &lt;dubbo.version&gt;0.2.0&lt;/dubbo.version&gt;</span><br><span class="line">        &lt;zk.version&gt;0.1&lt;/zk.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;javayh-commons&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="公用资源"><a href="#公用资源" class="headerlink" title="公用资源"></a>公用资源</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;javayh-dubbo&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;relativePath&gt;../&lt;/relativePath&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line">    &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;javayh-dubbo-api&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;name&gt;javayh-dubbo-api&lt;/name&gt;</span><br><span class="line">    &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">    &lt;description&gt;javayh-dubbo-api&lt;/description&gt;</span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        </span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="生产者"><a href="#生产者" class="headerlink" title="生产者"></a>生产者</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;javayh-dubbo&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;relativePath&gt;../&lt;/relativePath&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line">    &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;javayh-dubbo-server&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;name&gt;javayh-dubbo-server&lt;/name&gt;</span><br><span class="line">    &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">    &lt;description&gt;javayh-dubbo-server&lt;/description&gt;</span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;javayh-dubbo-api&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- springboot集成dubbo的起步依赖 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.alibaba.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;dubbo-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;dubbo.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!--引入zookeeper的客户端工具--&gt;</span><br><span class="line">        &lt;!-- https://mvnrepository.com/artifact/com.github.sgroschupf/zkclient --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.github.sgroschupf&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;zkclient&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;zk.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="消费者"><a href="#消费者" class="headerlink" title="消费者"></a>消费者</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;javayh-dubbo&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;relativePath&gt;../&lt;/relativePath&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line">    &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;javayh-dubbo-client&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;name&gt;javayh-dubbo-client&lt;/name&gt;</span><br><span class="line">    &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">    &lt;description&gt;javayh-dubbo-client&lt;/description&gt;</span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;javayh-dubbo-api&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- springboot集成dubbo的起步依赖 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.alibaba.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;dubbo-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;dubbo.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!--引入zookeeper的客户端工具--&gt;</span><br><span class="line">        &lt;!-- https://mvnrepository.com/artifact/com.github.sgroschupf/zkclient --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.github.sgroschupf&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;zkclient&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;zk.version&#125;&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h4 id="消费者-1"><a href="#消费者-1" class="headerlink" title="消费者"></a>消费者</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: javayh-dubbo-client</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 8022</span><br><span class="line">dubbo:</span><br><span class="line">  application:</span><br><span class="line">    name: javayh-dubbo-client</span><br><span class="line">  registry:</span><br><span class="line">    address: zookeeper://127.0.0.1:2181</span><br><span class="line">  monitor:</span><br><span class="line">    protocol: registry</span><br></pre></td></tr></table></figure>
+
+<h4 id="生产者-1"><a href="#生产者-1" class="headerlink" title="生产者"></a>生产者</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8021</span><br><span class="line"></span><br><span class="line">dubbo:</span><br><span class="line">  application:</span><br><span class="line">    name: javayh-dubbo-server</span><br><span class="line">  registry:</span><br><span class="line">    protocol: zookeeper</span><br><span class="line">    address: 127.0.0.1:2181</span><br><span class="line">  #通信规则（通信协议和接口）</span><br><span class="line">  protocol:</span><br><span class="line">    name: dubbo</span><br><span class="line">    port: 20880</span><br><span class="line">  monitor:</span><br><span class="line">    protocol: registry</span><br><span class="line">#开启包扫描，可替代 @EnableDubbo 注解</span><br><span class="line">#  scan:</span><br><span class="line">#    base-packages: com.javayh</span><br></pre></td></tr></table></figure>
+
+<h2 id="RPC流程"><a href="#RPC流程" class="headerlink" title="RPC流程"></a>RPC流程</h2><blockquote>
+<p>1.在公用资源内声明接口<br>2.在生产者内实现<br>3.在消费者内调用<br>注：采用ZK注册中心</p>
+</blockquote>
+<h4 id="公用API"><a href="#公用API" class="headerlink" title="公用API"></a>公用API</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public interface  ApiService &#123;</span><br><span class="line"></span><br><span class="line">    ApiDubbo save();</span><br><span class="line"></span><br><span class="line">    String findProt(String prot);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="生产者-2"><a href="#生产者-2" class="headerlink" title="生产者"></a>生产者</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//这里的@Service注解是Dubbo内的，一定要引用对，</span><br><span class="line">//关于版本号，如果生产者定义，消费者也必须采用相同的版本号</span><br><span class="line">@Service(version = &quot;javayh-0.1&quot;,interfaceClass = ApiService.class)</span><br><span class="line">public class ApiServer implements ApiService&#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public ApiDubbo save() &#123;</span><br><span class="line">        ApiDubbo apiDubbo = new ApiDubbo.ApiDubboBuilder().</span><br><span class="line">                setApiName(&quot;javayh-dubbo-api&quot;).</span><br><span class="line">                setApiType(&quot;AipDubbo.class&quot;).</span><br><span class="line">                setApiUrl(&quot;javayh/dubbo/api/save&quot;).build();</span><br><span class="line">        return apiDubbo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String findProt(String prot) &#123;</span><br><span class="line">        return prot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="消费者-2"><a href="#消费者-2" class="headerlink" title="消费者"></a>消费者</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@RequestMapping(value = &quot;/javayh/dubbo/api/&quot;)</span><br><span class="line">public class AipController &#123;</span><br><span class="line"></span><br><span class="line">    @Reference(version = &quot;javayh-0.1&quot;)</span><br><span class="line">    private ApiService apiService;</span><br><span class="line"></span><br><span class="line">    @GetMapping(value = &quot;save&quot;)</span><br><span class="line">    public Result save()&#123;</span><br><span class="line">        ApiDubbo apiDubbo1 = apiService.save();</span><br><span class="line">        return Result.javaYhInsertSuccess(apiDubbo1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @GetMapping(value = &quot;ip/&#123;prot&#125;&quot;)</span><br><span class="line">    public Result findProt(@PathVariable String prot)&#123;</span><br><span class="line">        return Result.javaYhInsertSuccess(apiService.findProt(prot));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>启动类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@EnableDubbo  //也可以在配置文件内配置，生产者、消费者都需要配置</span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class ServerApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(ServerApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="服务访问"><a href="#服务访问" class="headerlink" title="服务访问"></a>服务访问</h4><p><img src="https://img-blog.csdnimg.cn/2019071213190743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>此时服务已经调通</p>
+<h2 id="Dubbo-Admin"><a href="#Dubbo-Admin" class="headerlink" title="Dubbo-Admin"></a>Dubbo-Admin</h2><p>启动admin后可以观察到，我们现在的服务，说明配置正确<br><img src="https://img-blog.csdnimg.cn/2019071213221377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="安装Admin方式："><a href="#安装Admin方式：" class="headerlink" title="安装Admin方式："></a>安装Admin方式：</h4><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>最新的Admin采用的是前后端分离技术，需要单独部署</p>
+<h5 id="生产环境配置"><a href="#生产环境配置" class="headerlink" title="生产环境配置"></a>生产环境配置</h5><ol>
+<li><p>下载代码: <code>git clone https://github.com/apache/dubbo-admin.git</code></p>
+</li>
+<li><p>在 <code>dubbo-admin-server/src/main/resources/application.properties</code>中指定注册中心地址</p>
+</li>
+<li><p>构建</p>
+<blockquote>
+<ul>
+<li><code>mvn clean package</code>  </li>
+</ul>
+</blockquote>
+</li>
+<li><p>启动 </p>
+<ul>
+<li><code>mvn --projects dubbo-admin-server spring-boot:run</code><br>或者   </li>
+<li><code>cd dubbo-admin-distribution/target; java -jar dubbo-admin-0.1.jar</code></li>
+</ul>
+</li>
+<li><p>访问 <code>http://localhost:8080</code></p>
+</li>
+</ol>
+<hr>
+<h5 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h5><ul>
+<li>运行<code>dubbo admin server</code><br> <code>dubbo admin server</code>是一个标准的spring boot项目, 可以在任何java IDE中运行它</li>
+<li>运行<code>dubbo admin ui</code><br><code>dubbo admin ui</code>由npm管理和构建，在开发环境中，可以单独运行: <code>npm run dev</code></li>
+<li>页面访问<br>访问 <code>http://localhost:8081</code>, 由于前后端分开部署，前端支持热加载，任何页面的修改都可以实时反馈，不需要重启应用。<ul>
+<li>跨域问题<br>为了方便开发，我们提供了这种前后端分离的部署模式，主要的好处是支持前端热部署，在这种模式下，前端会通过8080端口访问后端的restful api接口，获取数据, 这将导致跨域访问的问题。因此我们在<code>dubbo-admin-ui/config/index.js</code>添加了支持跨域访问的配置,当前端通过<code>npm run dev</code>单独启动时，这些配置将被激活，允许跨域访问</li>
+</ul>
+</li>
+</ul>
+<h5 id="Swagger-支持"><a href="#Swagger-支持" class="headerlink" title="Swagger 支持"></a>Swagger 支持</h5><p>部署完成后，可以访问 <a href="http://localhost:8080/swagger-ui.html" target="_blank" rel="noopener">http://localhost:8080/swagger-ui.html</a> 来查看所有的restful api</p>
+<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>方式二安装简单，前后端没有分离，直接启动即可</p>
+<ul>
+<li>步骤1：<br>git clone <a href="https://github.com/apache/incubator-dubbo-ops" target="_blank" rel="noopener">https://github.com/apache/incubator-dubbo-ops</a></li>
+<li>第2步：<br>cd incubator-dubbo-ops &amp;&amp; mvn package</li>
+</ul>
+<p>这里只需要将Admin的配置内的ZK改成自己的即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">server.port=7001</span><br><span class="line">spring.velocity.cache=false</span><br><span class="line">spring.velocity.charset=UTF-8</span><br><span class="line">spring.velocity.layout-url=/templates/default.vm</span><br><span class="line">spring.messages.fallback-to-system-locale=false</span><br><span class="line">spring.messages.basename=i18n/message</span><br><span class="line">spring.root.password=root</span><br><span class="line">spring.guest.password=guest</span><br><span class="line"></span><br><span class="line">dubbo.registry.address=zookeeper://127.0.0.1:2181</span><br></pre></td></tr></table></figure>
+
+<p>希望对大家有所帮助，欢迎点赞转发！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixinprd.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -221,65 +338,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/15/Dubbo+Boot下的分布式治理/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Mysql+Mybatis乐观锁/" class="archive-article-date">
-  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/15/Mysql+Mybatis乐观锁/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mysql + Mybatis实现乐观锁</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Mysql+Mybatis乐观锁/">Mysql + Mybatis实现乐观锁</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -302,8 +460,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
