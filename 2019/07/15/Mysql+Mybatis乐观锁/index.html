@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Mysql + Mybatis实现乐观锁 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="乐观锁Mysql + Mybatis实现乐观锁1.案例sqlSET FOREIGN_KEY_CHECKS=0;  -- ---------------------------- -- Table structure for sys_order -- ---------------------------- DROP TABLE IF EXISTS `sys_order`; CREATE TABLE">
+<meta name="keywords" content="Mysql + Mybatis实现乐观锁">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql + Mybatis实现乐观锁">
+<meta property="og:url" content="http://yoursite.com/2019/07/15/Mysql+Mybatis乐观锁/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="乐观锁Mysql + Mybatis实现乐观锁1.案例sqlSET FOREIGN_KEY_CHECKS=0;  -- ---------------------------- -- Table structure for sys_order -- ---------------------------- DROP TABLE IF EXISTS `sys_order`; CREATE TABLE">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-15T06:46:41.700Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mysql + Mybatis实现乐观锁">
+<meta name="twitter:description" content="乐观锁Mysql + Mybatis实现乐观锁1.案例sqlSET FOREIGN_KEY_CHECKS=0;  -- ---------------------------- -- Table structure for sys_order -- ---------------------------- DROP TABLE IF EXISTS `sys_order`; CREATE TABLE">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Mysql+Mybatis乐观锁" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/Mysql+Mybatis乐观锁/" class="article-date">
+  <time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mysql + Mybatis实现乐观锁
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h2><h4 id="Mysql-Mybatis实现乐观锁"><a href="#Mysql-Mybatis实现乐观锁" class="headerlink" title="Mysql + Mybatis实现乐观锁"></a>Mysql + Mybatis实现乐观锁</h4><h4 id="1-案例sql"><a href="#1-案例sql" class="headerlink" title="1.案例sql"></a>1.案例sql</h4><pre><code>SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for sys_order
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_order`;
+CREATE TABLE `sys_order` (
+  `order_num` varchar(255) NOT NULL COMMENT &apos;订单号&apos;,
+  `order_name` varchar(255) DEFAULT NULL COMMENT &apos;订单名称&apos;,
+  `order_type` varchar(255) DEFAULT NULL COMMENT &apos;订单状态&apos;,
+  `order_quantity` varchar(255) DEFAULT NULL COMMENT &apos;订单数量&apos;,
+  `version` int(11) DEFAULT &apos;1&apos; COMMENT &apos;版本号&apos;,
+  PRIMARY KEY (`order_num`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_order
+-- ----------------------------
+INSERT INTO `sys_order` VALUES (&apos;123456fdxw3456&apos;, &apos;秒杀&apos;, &apos;已付款&apos;, &apos;1&apos;, &apos;1&apos;);
+INSERT INTO `sys_order` VALUES (&apos;1234td&apos;, &apos;双十一&apos;, &apos;代发货&apos;, &apos;22&apos;, &apos;1&apos;);</code></pre><h4 id="Dao创建"><a href="#Dao创建" class="headerlink" title="Dao创建"></a>Dao创建</h4><pre><code>public interface SysOrderMapper extends BaseMapper&lt;SysOrder&gt; {
+
+    int updateLock(SysOrder sysOrder);
+}</code></pre><h4 id="Mapper文件"><a href="#Mapper文件" class="headerlink" title="Mapper文件"></a>Mapper文件</h4><pre><code>&lt;update id=&quot;updateLock&quot; parameterType=&quot;com.javayh.entity.SysOrder&quot;&gt;
+        update
+          sys_order
+        set
+          order_type=#{orderType},
+          version= version+1
+        where
+          order_num=#{orderNum}
+        and
+          version = #{version}
+    &lt;/update&gt;</code></pre><h4 id="Service实现"><a href="#Service实现" class="headerlink" title="Service实现"></a>Service实现</h4><pre><code>@Service
+public class SysOrderServiceImpl extends ServiceImpl&lt;SysOrderMapper, SysOrder&gt; implements ISysOrderService {
+
+    @Autowired
+    private SysOrderMapper sysOrderMapper;
+
+    @Override
+    public int updateLock(SysOrder sysOrder) {
+        return sysOrderMapper.updateLock(sysOrder);
+    }
+}</code></pre><h4 id="接口调用"><a href="#接口调用" class="headerlink" title="接口调用"></a>接口调用</h4><pre><code>@Autowired
+    private SysOrderMapper sysOrderMapper;
+    @Autowired
+    private ISysOrderService sysOrderService;
+    /**
+     * 流程：
+     * 1.根据订单号查询出订单
+     * 2.修改订单的某个值，这里存在并发
+     * 3.修改时判断版本号，如果这是有其他的线程已修改，
+     * 则本次修改失败，若无修改，则修改成功；对应本案例的order1 与 order2
+     * 此方法的实现主要是跟根据version字段进行区分，
+     * 若version以被修改，where version 时无匹配的字段，自然失败
+     */
+    @GetMapping(value = &quot;test&quot;)
+    public void contextLoads() {
+        //1.查询
+        SysOrder sysOrder1 = sysOrderMapper.selectById(&quot;123456fdxw3456&quot;);
+        System.out.println(sysOrder1);
+        //SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=秒杀, orderQuantity=1, version=1)
+
+        SysOrder sysOrder2 = sysOrderMapper.selectById(&quot;123456fdxw3456&quot;);
+        System.out.println(sysOrder2);
+        //SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=秒杀, orderQuantity=1, version=1)
+
+        //2.修改字段
+        sysOrder1.setOrderType(&quot;买一赠一&quot;);
+        System.out.println(sysOrder1);
+        //SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=买一赠一, orderQuantity=1, version=1)
+
+        sysOrder2.setOrderType(&quot;买五赠一&quot;);
+        System.out.println(sysOrder2);
+        //SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=买五赠一, orderQuantity=1, version=1)
+
+        //3.执行修改
+        int order1 = sysOrderService.updateLock(sysOrder1);
+        SysOrder sysOrder3 = sysOrderMapper.selectById(&quot;123456fdxw3456&quot;);
+        System.out.println(sysOrder3);
+        System.out.println(order1&gt;0 ? &quot;成功&quot;:&quot;失败&quot;);
+        /**
+         * SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=买一赠一, orderQuantity=1, version=2)
+         * 成功
+         * SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=买一赠一, orderQuantity=1, version=2)
+         * 失败
+         */
+        int order2 = sysOrderService.updateLock(sysOrder2);
+        SysOrder sysOrder4 = sysOrderMapper.selectById(&quot;123456fdxw3456&quot;);
+        System.out.println(sysOrder4);
+        System.out.println(order2&gt;0 ? &quot;成功&quot;:&quot;失败&quot;);
+    }</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/Mysql+Mybatis乐观锁/" data-id="cjy40z2wa000104x0rhxfig46" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql-Mybatis实现乐观锁/">Mysql + Mybatis实现乐观锁</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/15/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql-Mybatis实现乐观锁/">Mysql + Mybatis实现乐观锁</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Mysql-Mybatis实现乐观锁/" style="font-size: 10px;">Mysql + Mybatis实现乐观锁</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/15/Mysql+Mybatis乐观锁/">Mysql + Mybatis实现乐观锁</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/15/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
