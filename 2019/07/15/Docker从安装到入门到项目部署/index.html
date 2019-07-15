@@ -6,15 +6,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Hexo</title>
+  <title>Docker从安装到入门到项目部署 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="Docker简介 Docker CommunityEdition（CE）非常适合希望开始使用Docker并尝试使用基于容器的应用程序的开发人员和小型团队。DockerCE有三种类型的更新通道：stable，test和nightly： Stable为您提供一般可用性的最新版本。测试提供在一般可用之前准备好进行测试的预发布。 Nightly为您提供下一个主要版本的最新正在进行的工作。 有关Docker">
+<meta name="keywords" content="微服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker从安装到入门到项目部署">
+<meta property="og:url" content="http://yoursite.com/2019/07/15/Docker从安装到入门到项目部署/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Docker简介 Docker CommunityEdition（CE）非常适合希望开始使用Docker并尝试使用基于容器的应用程序的开发人员和小型团队。DockerCE有三种类型的更新通道：stable，test和nightly： Stable为您提供一般可用性的最新版本。测试提供在一般可用之前准备好进行测试的预发布。 Nightly为您提供下一个主要版本的最新正在进行的工作。 有关Docker">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190612232122189.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190612234501379.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190612235703338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613000112298.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613000253631.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613000610550.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613000717517.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613001102750.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613001344484.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613003709664.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613004019726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613004159967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613004512198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613005017168.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613004848755.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190613005430453.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-07-15T15:00:46.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Docker从安装到入门到项目部署">
+<meta name="twitter:description" content="Docker简介 Docker CommunityEdition（CE）非常适合希望开始使用Docker并尝试使用基于容器的应用程序的开发人员和小型团队。DockerCE有三种类型的更新通道：stable，test和nightly： Stable为您提供一般可用性的最新版本。测试提供在一般可用之前准备好进行测试的预发布。 Nightly为您提供下一个主要版本的最新正在进行的工作。 有关Docker">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190612232122189.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -176,74 +198,86 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Docker从安装到入门到项目部署" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Docker从安装到入门到项目部署
+    </h1>
+  
+
+        
+        <a href="/2019/07/15/Docker从安装到入门到项目部署/" class="archive-article-date">
+  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><blockquote>
+<p>Docker Community<br>Edition（CE）非常适合希望开始使用Docker并尝试使用基于容器的应用程序的开发人员和小型团队。Docker<br>CE有三种类型的更新通道：stable，test和nightly： Stable为您提供一般可用性的最新版本。<br>测试提供在一般可用之前准备好进行测试的预发布。 Nightly为您提供下一个主要版本的最新正在进行的工作。 有关Docker<br>CE的更多信息，请参阅 Docker Community Edition。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Docker-Service"><a href="#Docker-Service" class="headerlink" title="Docker Service"></a>Docker Service</h2><p><img src="https://img-blog.csdnimg.cn/20190612232122189.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>我们常用的服务器都可以安装Docker，只是Docker对服务器内核有要求，安装时需要先查看，下面会说到</p>
+</blockquote>
+<h2 id="Docker-安装"><a href="#Docker-安装" class="headerlink" title="Docker 安装"></a>Docker 安装</h2><blockquote>
+<p>其实网上安装的步骤很多，也很详细，这里我就不多说了；<br>小编这里有的是ububtu-16；</p>
+</blockquote>
+<h4 id="1-ubuntu安装步骤"><a href="#1-ubuntu安装步骤" class="headerlink" title="1.ubuntu安装步骤"></a>1.ubuntu安装步骤</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># step 1: 安装必要的一些系统工具</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common</span><br><span class="line"># step 2: 安装GPG证书</span><br><span class="line">curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line"># Step 3: 写入软件源信息</span><br><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable&quot;</span><br><span class="line"># Step 4: 更新并安装Docker-CE</span><br><span class="line">sudo apt-get -y update</span><br><span class="line">sudo apt-get -y install docker-ce</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装校验"><a href="#安装校验" class="headerlink" title="安装校验"></a>安装校验</h4><blockquote>
+<p>docker version<br><img src="https://img-blog.csdnimg.cn/20190612234501379.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</blockquote>
+<h2 id="Docker-基本操作"><a href="#Docker-基本操作" class="headerlink" title="Docker 基本操作"></a>Docker 基本操作</h2><blockquote>
+<p>1.镜像拉取<br>docker pull<br>如：docker pull mysql:5.6<br>如图则表示成功<br><img src="https://img-blog.csdnimg.cn/20190612235703338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>2.镜像查询<br>docker image ls<br><img src="https://img-blog.csdnimg.cn/20190613000112298.png" alt="在这里插入图片描述"><br> 3.镜像删除<br>docker rmi<br>如：docker rmi mysql ;这里需要通过id进行删除<br>如图表示删除成功<br><img src="https://img-blog.csdnimg.cn/20190613000253631.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>4.docker 运行<br>如：docker run -d -p 91:80 nginx<br>命令解释：<br>docker  run 表示运行<br>-d 后台运行<br>-p 宿主机端口:容器端口<br><img src="https://img-blog.csdnimg.cn/20190613000610550.png" alt="在这里插入图片描述"><br>5.查看docker运行的容器<br>docker ps<br><img src="https://img-blog.csdnimg.cn/20190613000717517.png" alt="在这里插入图片描述"><br>通过上面的运行与查看表示我们早docker内已成功安装nginx并运行起来了；下面我们就访问以下;如图表示我们的服务已经运行起来了!<br><img src="https://img-blog.csdnimg.cn/20190613001102750.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>6.停止docker内的服务<br>docker stop<br>如图表示已经停止，我们再次访问<a href="http://192.168.21.137:91" target="_blank" rel="noopener">http://192.168.21.137:91</a> 发现服务不在了<br><img src="https://img-blog.csdnimg.cn/20190613001344484.png" alt="在这里插入图片描述"></p>
+</blockquote>
+<h2 id="Docker-部署SpringCloud项目"><a href="#Docker-部署SpringCloud项目" class="headerlink" title="Docker 部署SpringCloud项目"></a>Docker 部署SpringCloud项目</h2><h4 id="1-创建DockerFile"><a href="#1-创建DockerFile" class="headerlink" title="1.创建DockerFile"></a>1.创建DockerFile</h4><blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20190613003709664.png" alt="在这里插入图片描述"><br>Dockerfile 解释<br> 基于哪个镜像<br>From java:8<br> 复制文件到容器 ADD eureka-server.jar /app.jar<br>声明需要暴露的端口 EXPOSE 8761    # 微服务项目的启动端口<br>配置容器启动后执行的命令 ENTRYPOINT [“java”,”-jar”,”/app.jar”] 3、使用docker build命令构建镜像</p>
+</blockquote>
+<h4 id="2-发布服务"><a href="#2-发布服务" class="headerlink" title="2.发布服务"></a>2.发布服务</h4><blockquote>
+<p>1、将jar包上传linux服务器/app/eureka目录，在jar包所在目录创建名为Dockerfile的文件<br> 2、docker build -t eureka-server:0.0.1 .<br>格式： docker build -t 镜像名称:标签 Dockerfile的相对位置 在这里，使用-t选项指定了镜像的标签。执行该命令后，终端将会输出如下的内容<br><img src="https://img-blog.csdnimg.cn/20190613004019726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3、docker run -p 8088:8088 eureka-server:0.0.1<img src="https://img-blog.csdnimg.cn/20190613004159967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>4、验证是否启动成功<br><img src="https://img-blog.csdnimg.cn/20190613004512198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>就此Docker安装到服务发布就讲解完成，不足之处，请多多指教</p>
+</blockquote>
+<p>有兴趣的朋友可以添加微信群，如果微信群过期，请联系小编二维码同下，也欢迎关注小编的微信公众号《JAVA有货》<br><img src="https://img-blog.csdnimg.cn/20190613005017168.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190613004848755.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190613005430453.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixinprd.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Java设计模式之策略者模式/" class="archive-article-date">
-  	<time datetime="2019-07-15T14:58:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Java设计模式之策略者模式/">Java设计模式之策略者模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Springboot2.X+Elasticsearch 实现分词搜索/" class="archive-article-date">
-  	<time datetime="2019-07-15T14:50:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Springboot2.X+Elasticsearch 实现分词搜索/">Springboot2.X+Elasticsearch 实现分词搜索</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -255,259 +289,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/15/Docker从安装到入门到项目部署/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Dubbo+Boot下的分布式治理/" class="archive-article-date">
-  	<time datetime="2019-07-15T10:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/07/15/OAuth2实现单点登录/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          OAuth2实现单点登录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/15/JAVA多线程创建及使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA多线程创建及使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Dubbo+Boot下的分布式治理/">Dubbo+Boot下的分布式治理</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/OAuth2实现单点登录/" class="archive-article-date">
-  	<time datetime="2019-07-15T10:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/OAuth2实现单点登录/">OAuth2实现单点登录</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Docker从安装到入门到项目部署/" class="archive-article-date">
-  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Docker从安装到入门到项目部署/">Docker从安装到入门到项目部署</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/JAVA多线程创建及使用/" class="archive-article-date">
-  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/JAVA多线程创建及使用/">JAVA多线程创建及使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Mysql+Mybatis乐观锁/" class="archive-article-date">
-  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Mysql+Mybatis乐观锁/">Mysql + Mybatis实现乐观锁</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/SpringBoot + MybatisPlus实现敏捷开发/" class="archive-article-date">
-  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/SpringBoot + MybatisPlus实现敏捷开发/">SpringBoot + MybatisPlus实现敏捷开发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -530,8 +420,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

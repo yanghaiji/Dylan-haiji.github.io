@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Hexo</title>
+  <title>Springboot2.X+Elasticsearch 实现分词搜索 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="Elasticsearch 安装 具体安装步骤网上很多，大家可以借鉴一下；关于分词插件的安装可以执行一下命令:拼音插件./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v6.1.1/elasticsearch-analysis-pin">
+<meta name="keywords" content="微服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Springboot2.X+Elasticsearch 实现分词搜索">
+<meta property="og:url" content="http://yoursite.com/2019/07/15/Springboot2.X+Elasticsearch 实现分词搜索/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Elasticsearch 安装 具体安装步骤网上很多，大家可以借鉴一下；关于分词插件的安装可以执行一下命令:拼音插件./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v6.1.1/elasticsearch-analysis-pin">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190625183146125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190625183046566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190625183325334.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-07-15T15:00:08.960Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Springboot2.X+Elasticsearch 实现分词搜索">
+<meta name="twitter:description" content="Elasticsearch 安装 具体安装步骤网上很多，大家可以借鉴一下；关于分词插件的安装可以执行一下命令:拼音插件./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v6.1.1/elasticsearch-analysis-pin">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190625183146125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -176,74 +185,81 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Springboot2.X+Elasticsearch 实现分词搜索" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Java设计模式之策略者模式/" class="archive-article-date">
-  	<time datetime="2019-07-15T14:58:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Java设计模式之策略者模式/">Java设计模式之策略者模式</a>
+    <h1 class="article-title" itemprop="name">
+      Springboot2.X+Elasticsearch 实现分词搜索
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Springboot2.X+Elasticsearch 实现分词搜索/" class="archive-article-date">
+        
+        <a href="/2019/07/15/Springboot2.X+Elasticsearch 实现分词搜索/" class="archive-article-date">
   	<time datetime="2019-07-15T14:50:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Springboot2.X+Elasticsearch 实现分词搜索/">Springboot2.X+Elasticsearch 实现分词搜索</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Elasticsearch-安装"><a href="#Elasticsearch-安装" class="headerlink" title="Elasticsearch 安装"></a>Elasticsearch 安装</h3><blockquote>
+<p>具体安装步骤网上很多，大家可以借鉴一下；<br>关于分词插件的安装可以执行一下命令:<br>拼音插件<br>./bin/elasticsearch-plugin install <a href="https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v6.1.1/elasticsearch-analysis-pinyin-6.1.1.zip" target="_blank" rel="noopener">https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v6.1.1/elasticsearch-analysis-pinyin-6.1.1.zip</a><br>中文插件<br> ./bin/elasticsearch-plugin install <a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.1.1/elasticsearch-analysis-ik-6.1.1.zip" target="_blank" rel="noopener">https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.1.1/elasticsearch-analysis-ik-6.1.1.zip</a><br>如不行执行在线下载，也可以离线下载<br>放在安装 elasticsearch 下plugins内即可</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="Boot-Es"><a href="#Boot-Es" class="headerlink" title="Boot + Es"></a>Boot + Es</h3><h4 id="1-相关依赖"><a href="#1-相关依赖" class="headerlink" title="1.相关依赖"></a>1.相关依赖</h4><p>本文用的是boot2.0.2，这里也配置了数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;javayh-oauth2&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;relativePath&gt;../&lt;/relativePath&gt;&lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line">    &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;javayh-elasticsearch&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;name&gt;javayh-elasticsearch&lt;/name&gt;</span><br><span class="line">    &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.javayh&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;javayh-commons&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-data-elasticsearch&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;net.java.dev.jna&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;jna&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.0.9&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<h4 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8087</span><br><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: javayh-elastic</span><br><span class="line">  data:</span><br><span class="line">    elasticsearch:</span><br><span class="line">      repositories:</span><br><span class="line">        enabled: true</span><br><span class="line">      cluster-name: elasticsearch</span><br><span class="line">      cluster-nodes: 127.0.0.1:9300</span><br><span class="line">      properties:</span><br><span class="line">        path:</span><br><span class="line">          logs: ./elasticsearch/log</span><br><span class="line">          data: ./elasticsearch/data</span><br><span class="line">      local: true</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8&amp;useUnicode=true&amp;useSSL=false</span><br><span class="line">    username: root</span><br><span class="line">    password: 1219320</span><br><span class="line">    driver-class-name: com.mysql.jdbc.Driver</span><br><span class="line"></span><br><span class="line">mybatis:</span><br><span class="line">  dao-locations: classpath:dao/*.mapper</span><br><span class="line">  type-aliases-package: com.javayh.entity</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  instance:</span><br><span class="line">    prefer-ip-address: true</span><br><span class="line">    instance-id: $&#123;spring.cloud.client.ip-address&#125;:$&#123;server.port&#125;</span><br><span class="line">  client:</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http://localhost:8090/eureka/</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-实体映射"><a href="#3-实体映射" class="headerlink" title="3.实体映射"></a>3.实体映射</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Data</span><br><span class="line">@Document(indexName = &quot;javayh&quot;,type = &quot;sys_es&quot;)</span><br><span class="line">public class EsEntiy implements Serializable &#123;</span><br><span class="line">    @Id</span><br><span class="line">    private String esId;</span><br><span class="line">    @Field(type = FieldType.Text)</span><br><span class="line">    private String esIndex;</span><br><span class="line">    @Field(type = FieldType.Text)</span><br><span class="line">    private String esType;</span><br><span class="line">    @Field(type = FieldType.Text)</span><br><span class="line">    private String esCode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-Repository-JPA的封装"><a href="#4-Repository-JPA的封装" class="headerlink" title="4.Repository JPA的封装"></a>4.Repository JPA的封装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Repository</span><br><span class="line">public interface EsRepository extends ElasticsearchRepository&lt;EsEntiy,String&gt; &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-EsService"><a href="#5-EsService" class="headerlink" title="5.EsService"></a>5.EsService</h4><p>这里包含了新增、普通的查询、模糊查询、高亮检索</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class EsService &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private EsRepository esRepository;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private ElasticsearchTemplate elasticsearchTemplate;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 保存</span><br><span class="line">     * @param esEntiy</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public EsEntiy save(EsEntiy esEntiy)&#123;</span><br><span class="line">        if (StringUtils.isEmpty(esEntiy.getEsCode()))</span><br><span class="line">            throw new BaseException(&quot;eslasticsearch code is null&quot;);</span><br><span class="line">        esEntiy.setEsId(UuidUtils.getUuid());</span><br><span class="line">        return esRepository.save(esEntiy);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 查询</span><br><span class="line">     * @param code</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public EsEntiy findbyEs(String code)&#123;</span><br><span class="line">        Optional&lt;EsEntiy&gt; byId = esRepository.findById(code);</span><br><span class="line">        return byId.get();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 删除</span><br><span class="line">     * @param id</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public int delete(String id)&#123;</span><br><span class="line">        if(StringUtils.isEmpty(id))</span><br><span class="line">            esRepository.deleteById(id);</span><br><span class="line">        EsEntiy esEntiy = esRepository.findById(id).get();</span><br><span class="line">        return  esEntiy == null ? 0: 1 ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * matchQuery       : 单个字段查询</span><br><span class="line">     * matchAllQuery    : 匹配所有</span><br><span class="line">     * multiMatchQuery  : 多个字段匹配某一个值</span><br><span class="line">     * wildcardQuery    : 模糊查询</span><br><span class="line">     * boost            : 设置权重,数值越大权重越大</span><br><span class="line">     * 混合搜索</span><br><span class="line">     * @param content</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public Page&lt;EsEntiy&gt; querySearch(String content)&#123;</span><br><span class="line">        DisMaxQueryBuilder disMaxQueryBuilder = QueryBuilders.disMaxQuery();</span><br><span class="line">        QueryBuilder ikTypeQuery = QueryBuilders.matchQuery(&quot;esType&quot;, content).boost(2f);</span><br><span class="line">        QueryBuilder pinyinTypeQuery = QueryBuilders.matchQuery(&quot;esType.pinyin&quot;, content);</span><br><span class="line">        QueryBuilder ikCodeQuery = QueryBuilders.matchQuery(&quot;esCode&quot;, content).boost(2f);</span><br><span class="line">        QueryBuilder pinyinCodeQuery = QueryBuilders.matchQuery(&quot;esCode.pinyin&quot;, content);</span><br><span class="line">        QueryBuilder wildcardCodeQuery = QueryBuilders.wildcardQuery(&quot;esCode&quot;, content);</span><br><span class="line">        QueryBuilder multiCodeQuery = QueryBuilders.multiMatchQuery(content,&quot;esType&quot;,&quot;esCode&quot;);</span><br><span class="line">        disMaxQueryBuilder.add(ikTypeQuery);</span><br><span class="line">        disMaxQueryBuilder.add(pinyinTypeQuery);</span><br><span class="line">        disMaxQueryBuilder.add(ikCodeQuery);</span><br><span class="line">        disMaxQueryBuilder.add(pinyinCodeQuery);</span><br><span class="line">        disMaxQueryBuilder.add(wildcardCodeQuery);</span><br><span class="line">        disMaxQueryBuilder.add(multiCodeQuery);</span><br><span class="line">        SearchQuery searchQuery = new NativeSearchQueryBuilder()</span><br><span class="line">                .withQuery(disMaxQueryBuilder).build();</span><br><span class="line">        Page&lt;EsEntiy&gt; search = esRepository.search(searchQuery);</span><br><span class="line">        return search;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 高亮检索</span><br><span class="line">     * @param type</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public AggregatedPage&lt;EsEntiy&gt; querySearchType(String type)&#123;</span><br><span class="line">        DisMaxQueryBuilder disMaxQueryBuilder = QueryBuilders.disMaxQuery();</span><br><span class="line">        QueryBuilder ikTypeQuery = QueryBuilders.wildcardQuery(&quot;esType&quot;, type).boost(2f);</span><br><span class="line">        QueryBuilder ikCodeQuery = QueryBuilders.wildcardQuery(&quot;esCode&quot;, type).boost(2f);</span><br><span class="line">        List&lt;String&gt; highlightFields = new ArrayList&lt;String&gt;();</span><br><span class="line">        highlightFields.add(&quot;esType&quot;);</span><br><span class="line">        highlightFields.add(&quot;esCode&quot;);</span><br><span class="line">        HighlightBuilder.Field[] fields = new HighlightBuilder.Field[highlightFields.size()];</span><br><span class="line">        for (int x = 0; x &lt; highlightFields.size(); x++) &#123;</span><br><span class="line">            fields[x] = new HighlightBuilder.Field(highlightFields.get(x)).preTags(EsHighlight.HIGH_LIGHT_START_TAG)</span><br><span class="line">                    .postTags(EsHighlight.HIGH_LIGHT_END_TAG);</span><br><span class="line">        &#125;</span><br><span class="line">        disMaxQueryBuilder.add(ikTypeQuery);</span><br><span class="line">        disMaxQueryBuilder.add(ikCodeQuery);</span><br><span class="line">        SearchQuery searchQuery = new NativeSearchQueryBuilder()</span><br><span class="line">                .withQuery(disMaxQueryBuilder)</span><br><span class="line">                .withHighlightFields(fields)</span><br><span class="line">                //.withPageable(PageRequest.of(1, 10))</span><br><span class="line">                .build();</span><br><span class="line">        //不需要高亮就直接分页返回</span><br><span class="line">        //Page&lt;EsEntiy&gt; esEntiys = esRepository.search(searchQuery);</span><br><span class="line">        //高亮显示</span><br><span class="line">        AggregatedPage&lt;EsEntiy&gt; esEntiys = elasticsearchTemplate.queryForPage(searchQuery, EsEntiy.class, new SearchResultMapper() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public &lt;T&gt; AggregatedPage&lt;T&gt; mapResults(SearchResponse searchResponse, Class&lt;T&gt; aClass, Pageable pageable) &#123;</span><br><span class="line">                pageable = PageRequest.of(1, 10);</span><br><span class="line">                List&lt;EsEntiy&gt; chunk = new ArrayList&lt;&gt;();</span><br><span class="line">                for (SearchHit searchHit : searchResponse.getHits()) &#123;</span><br><span class="line">                    if (searchResponse.getHits().getHits().length &lt;= 0) &#123;</span><br><span class="line">                        return null;</span><br><span class="line">                    &#125;</span><br><span class="line">                    EsEntiy esEntiy = new EsEntiy();</span><br><span class="line">                    esEntiy.setEsId(searchHit.getId());</span><br><span class="line">                    esEntiy.setEsIndex(searchHit.getIndex());</span><br><span class="line">                    //name or memoe</span><br><span class="line">                    HighlightField code = searchHit.getHighlightFields().get(&quot;esCode&quot;);</span><br><span class="line">                    if (code != null) &#123;</span><br><span class="line">                        esEntiy.setEsCode(code.fragments()[0].toString());</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        Object esCode = searchHit.getSourceAsMap().get(&quot;esCode&quot;);</span><br><span class="line">                        if(esCode == null)</span><br><span class="line">                            esEntiy.setEsCode(&quot;&quot;);</span><br><span class="line">                        else</span><br><span class="line">                            esEntiy.setEsCode(esCode.toString());</span><br><span class="line">                    &#125;</span><br><span class="line">                    HighlightField type = searchHit.getHighlightFields().get(&quot;esType&quot;);</span><br><span class="line">                    if (type != null) &#123;</span><br><span class="line">                        esEntiy.setEsType(type.fragments()[0].toString());</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        Object esType = searchHit.getSourceAsMap().get(&quot;esType&quot;);</span><br><span class="line">                        if(esType == null )</span><br><span class="line">                            esEntiy.setEsType(&quot;&quot;);</span><br><span class="line">                        else</span><br><span class="line">                            esEntiy.setEsType(esType.toString());</span><br><span class="line">                    &#125;</span><br><span class="line">                    chunk.add(esEntiy);</span><br><span class="line">                &#125;</span><br><span class="line">                if (chunk.size() &gt; 0) &#123;</span><br><span class="line">                    return  new AggregatedPageImpl&lt;T&gt;((List&lt;T&gt;) chunk);</span><br><span class="line">                &#125;</span><br><span class="line">                return null;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        return esEntiys;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-高亮配置"><a href="#6-高亮配置" class="headerlink" title="6. 高亮配置"></a>6. 高亮配置</h4><p>承接上边的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public interface EsHighlight &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 高亮显示 - 开始标签</span><br><span class="line">     */</span><br><span class="line">    String HIGH_LIGHT_START_TAG = &quot;&lt;javayh&gt;&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 高亮显示 - 结束标签</span><br><span class="line">     */</span><br><span class="line">    String HIGH_LIGHT_END_TAG = &quot;&lt;/javayh&gt;&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 索引名称</span><br><span class="line">     */</span><br><span class="line">    class INDEX_NAME &#123;</span><br><span class="line">        /**</span><br><span class="line">         * 游记</span><br><span class="line">         */</span><br><span class="line">        public static final String TRAVEL = &quot;travel&quot;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h3><h4 id="1-新增"><a href="#1-新增" class="headerlink" title="1.新增"></a>1.新增</h4><p><img src="https://img-blog.csdnimg.cn/20190625183146125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们可以通过es-head进行查看<br><img src="https://img-blog.csdnimg.cn/20190625183046566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="2-高亮检索"><a href="#2-高亮检索" class="headerlink" title="2. 高亮检索"></a>2. 高亮检索</h4><p><img src="https://img-blog.csdnimg.cn/20190625183325334.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看出已经将我们的搜索条件“测”，进行了高亮显示<br>boot2.X整合es已经完成，希望对看到的朋友有所帮助！<br>如有疑问可以添加小编微信：372787553,互相交流！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixinprd.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -255,259 +271,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/15/Springboot2.X+Elasticsearch 实现分词搜索/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Dubbo+Boot下的分布式治理/" class="archive-article-date">
-  	<time datetime="2019-07-15T10:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/07/15/Java设计模式之策略者模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java设计模式之策略者模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/15/Dubbo+Boot下的分布式治理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Dubbo+Boot下的分布式治理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Dubbo+Boot下的分布式治理/">Dubbo+Boot下的分布式治理</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/OAuth2实现单点登录/" class="archive-article-date">
-  	<time datetime="2019-07-15T10:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/OAuth2实现单点登录/">OAuth2实现单点登录</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Docker从安装到入门到项目部署/" class="archive-article-date">
-  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Docker从安装到入门到项目部署/">Docker从安装到入门到项目部署</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/JAVA多线程创建及使用/" class="archive-article-date">
-  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/JAVA多线程创建及使用/">JAVA多线程创建及使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Mysql+Mybatis乐观锁/" class="archive-article-date">
-  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Mysql+Mybatis乐观锁/">Mysql + Mybatis实现乐观锁</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/SpringBoot + MybatisPlus实现敏捷开发/" class="archive-article-date">
-  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/SpringBoot + MybatisPlus实现敏捷开发/">SpringBoot + MybatisPlus实现敏捷开发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -530,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
