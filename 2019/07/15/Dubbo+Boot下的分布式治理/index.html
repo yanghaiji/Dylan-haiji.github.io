@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Dubbo+Boot下的分布式治理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言 这是本文的代码地址https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo欢迎各位star  Dubbo背景随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演">
+  <meta name="description" content="Dubbo背景随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演进。">
 <meta name="keywords" content="随笔,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dubbo+Boot下的分布式治理">
 <meta property="og:url" content="http://yoursite.com/2019/07/15/Dubbo+Boot下的分布式治理/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言 这是本文的代码地址https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo欢迎各位star  Dubbo背景随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演">
+<meta property="og:description" content="Dubbo背景随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演进。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190712111732968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190712112523991.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190712125308518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2019071213190743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2019071213221377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-07-15T10:48:00.305Z">
+<meta property="og:updated_time" content="2019-07-15T11:09:40.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dubbo+Boot下的分布式治理">
-<meta name="twitter:description" content="前言 这是本文的代码地址https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo欢迎各位star  Dubbo背景随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演">
+<meta name="twitter:description" content="Dubbo背景随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演进。">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190712111732968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -207,10 +207,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>这是本文的代码地址<br><a href="https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo" target="_blank" rel="noopener">https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo</a><br>欢迎各位star</p>
-</blockquote>
-<h2 id="Dubbo背景"><a href="#Dubbo背景" class="headerlink" title="Dubbo背景"></a>Dubbo背景</h2><p>随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演进。<br><img src="https://img-blog.csdnimg.cn/20190712111732968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+        <h2 id="Dubbo背景"><a href="#Dubbo背景" class="headerlink" title="Dubbo背景"></a>Dubbo背景</h2><p>随着Internet的快速发展，Web应用程序的规模不断扩大，最终我们发现传统的垂直架构（单片机）无法再处理这个问题。分布式服务架构和流量计算架构势在必行，迫切需要一个治理系统来确保架构的有序演进。<br><img src="https://img-blog.csdnimg.cn/20190712111732968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <a id="more"></a>
 <p><strong>单片架构</strong><br>当流量非常低时，只有一个应用程序，所有功能都部署在一起，以减少部署节点和成本。此时，数据访问框架（ORM）是简化CRUD工作负载的关键。</p>
 <p><strong>垂直建筑</strong><br>当流量变大时，添加单片应用程序实例无法很好地加速访问，提高效率的一种方法是将单片机拆分为离散应用程序。此时，用于加速前端页面开发的Web框架（MVC）是关键。</p>
@@ -289,6 +286,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">server.port=7001</span><br><span class="line">spring.velocity.cache=false</span><br><span class="line">spring.velocity.charset=UTF-8</span><br><span class="line">spring.velocity.layout-url=/templates/default.vm</span><br><span class="line">spring.messages.fallback-to-system-locale=false</span><br><span class="line">spring.messages.basename=i18n/message</span><br><span class="line">spring.root.password=root</span><br><span class="line">spring.guest.password=guest</span><br><span class="line"></span><br><span class="line">dubbo.registry.address=zookeeper://127.0.0.1:2181</span><br></pre></td></tr></table></figure>
 
 <p>希望对大家有所帮助，欢迎点赞转发！</p>
+<blockquote>
+<p>这是本文的代码地址<br><a href="https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo" target="_blank" rel="noopener">https://github.com/Dylan-haiji/javayh-cloud/tree/javayh-dubbo/javayh-dubbo</a><br>欢迎各位star</p>
+</blockquote>
 
       
 
@@ -403,8 +403,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/07/15/Mysql+Mybatis乐观锁/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mysql + Mybatis实现乐观锁</div>
+    <a href="/2019/07/15/OAuth2实现单点登录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OAuth2实现单点登录</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -547,6 +547,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
             
             <div class="clearfix"></div>

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="乐观锁Mysql + Mybatis实现乐观锁1.案例sqlSET FOREIGN_KEY_CHECKS=0;  -- ---------------------------- -- Table structure for sys_order -- ---------------------------- DROP TABLE IF EXISTS `sys_order`; CREATE TABLE">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-15T10:27:58.631Z">
+<meta property="og:updated_time" content="2019-07-15T11:04:15.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql + Mybatis实现乐观锁">
 <meta name="twitter:description" content="乐观锁Mysql + Mybatis实现乐观锁1.案例sqlSET FOREIGN_KEY_CHECKS=0;  -- ---------------------------- -- Table structure for sys_order -- ---------------------------- DROP TABLE IF EXISTS `sys_order`; CREATE TABLE">
@@ -214,17 +214,15 @@ CREATE TABLE `sys_order` (
   `order_quantity` varchar(255) DEFAULT NULL COMMENT &apos;订单数量&apos;,
   `version` int(11) DEFAULT &apos;1&apos; COMMENT &apos;版本号&apos;,
   PRIMARY KEY (`order_num`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;</code></pre> <a id="more"></a>   
+<pre><code>-- ----------------------------
 -- Records of sys_order
 -- ----------------------------
 INSERT INTO `sys_order` VALUES (&apos;123456fdxw3456&apos;, &apos;秒杀&apos;, &apos;已付款&apos;, &apos;1&apos;, &apos;1&apos;);
 INSERT INTO `sys_order` VALUES (&apos;1234td&apos;, &apos;双十一&apos;, &apos;代发货&apos;, &apos;22&apos;, &apos;1&apos;);</code></pre><h4 id="Dao创建"><a href="#Dao创建" class="headerlink" title="Dao创建"></a>Dao创建</h4><pre><code>public interface SysOrderMapper extends BaseMapper&lt;SysOrder&gt; {
 
     int updateLock(SysOrder sysOrder);
-}</code></pre><a id="more"></a>
-<h4 id="Mapper文件"><a href="#Mapper文件" class="headerlink" title="Mapper文件"></a>Mapper文件</h4><pre><code>&lt;update id=&quot;updateLock&quot; parameterType=&quot;com.javayh.entity.SysOrder&quot;&gt;
+}</code></pre><h4 id="Mapper文件"><a href="#Mapper文件" class="headerlink" title="Mapper文件"></a>Mapper文件</h4><pre><code>&lt;update id=&quot;updateLock&quot; parameterType=&quot;com.javayh.entity.SysOrder&quot;&gt;
         update
           sys_order
         set
@@ -409,11 +407,11 @@ public class SysOrderServiceImpl extends ServiceImpl&lt;SysOrderMapper, SysOrder
   
 <nav id="article-nav">
   
-    <a href="/2019/07/15/Dubbo+Boot下的分布式治理/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/15/OAuth2实现单点登录/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Dubbo+Boot下的分布式治理
+          OAuth2实现单点登录
         
       </div>
     </a>
@@ -558,6 +556,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
             
             <div class="clearfix"></div>
