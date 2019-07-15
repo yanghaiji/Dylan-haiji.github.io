@@ -9,14 +9,14 @@
   <title>Mysql + Mybatis实现乐观锁 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="乐观锁Mysql + Mybatis实现乐观锁1.案例sqlSET FOREIGN_KEY_CHECKS=0;  -- ---------------------------- -- Table structure for sys_order -- ---------------------------- DROP TABLE IF EXISTS `sys_order`; CREATE TABLE">
-<meta name="keywords" content="Mysql + Mybatis实现乐观锁">
+<meta name="keywords" content="随笔,Java,数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql + Mybatis实现乐观锁">
 <meta property="og:url" content="http://yoursite.com/2019/07/15/Mysql+Mybatis乐观锁/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="乐观锁Mysql + Mybatis实现乐观锁1.案例sqlSET FOREIGN_KEY_CHECKS=0;  -- ---------------------------- -- Table structure for sys_order -- ---------------------------- DROP TABLE IF EXISTS `sys_order`; CREATE TABLE">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-15T08:55:22.102Z">
+<meta property="og:updated_time" content="2019-07-15T10:27:58.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql + Mybatis实现乐观锁">
 <meta name="twitter:description" content="乐观锁Mysql + Mybatis实现乐观锁1.案例sqlSET FOREIGN_KEY_CHECKS=0;  -- ---------------------------- -- Table structure for sys_order -- ---------------------------- DROP TABLE IF EXISTS `sys_order`; CREATE TABLE">
@@ -62,7 +62,13 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags">随笔</a></li>
+				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="/tags/Java/">Java</a></li>
+	        
+				<li><a href="/tags/微服务/">微服务</a></li>
+	        
+				<li><a href="/tags/数据库/">数据库</a></li>
 	        
 			</ul>
 		</nav>
@@ -92,7 +98,7 @@
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
-					<a class="weixin" target="_blank" href="/372787553" title="weixin"><i class="icon-weixin"></i></a>
+					<a class="weixin" target="_blank" href="/img/weixin.jpg" title="weixin"><i class="icon-weixin"></i></a>
 		        
 			</div>
 		</nav>
@@ -124,6 +130,12 @@
 			
 				
 			
+				
+			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -137,18 +149,24 @@
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
-						<a class="weixin" target="_blank" href="/372787553" title="weixin"><i class="icon-weixin"></i></a>
+						<a class="weixin" target="_blank" href="/img/weixin.jpg" title="weixin"><i class="icon-weixin"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags">随笔</a></li>
+					<li style="width: 20%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 20%"><a href="/tags/Java/">Java</a></li>
+		        
+					<li style="width: 20%"><a href="/tags/微服务/">微服务</a></li>
+		        
+					<li style="width: 20%"><a href="/tags/数据库/">数据库</a></li>
 		        
 				</ul>
 			</nav>
@@ -292,7 +310,7 @@ public class SysOrderServiceImpl extends ServiceImpl&lt;SysOrderMapper, SysOrder
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="/img/weixin.jpg">
+                      <img class="reward-img" src="/img/weixinprd.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -313,7 +331,15 @@ public class SysOrderServiceImpl extends ServiceImpl&lt;SysOrderMapper, SysOrder
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql + Mybatis实现乐观锁</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
         		</li>
       		
 		</ul>
@@ -381,16 +407,6 @@ public class SysOrderServiceImpl extends ServiceImpl&lt;SysOrderMapper, SysOrder
 </article>
 
   
-<nav id="article-nav">
-  
-  
-    <a href="/2019/07/15/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -512,6 +528,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql + Mybatis实现乐观锁</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
             
             <div class="clearfix"></div>
