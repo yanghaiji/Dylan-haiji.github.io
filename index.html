@@ -43,11 +43,13 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="https://avatars2.githubusercontent.com/u/37392164?s=400&amp;u=8867d7d03aeee8017cf41f1c942e12429c907e53&amp;v=4" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		  <h1 class="header-author"><a href="/">Dylan</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">人生如戏，亦是看戏也是演习</p>
 		
 
 		<nav class="header-menu">
@@ -55,7 +57,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/tags">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -77,13 +79,15 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/Dylan-haiji" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://blog.csdn.net/weixin_38937840" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/372787553" title="weixin"><i class="icon-weixin"></i></a>
 		        
 			</div>
 		</nav>
@@ -101,11 +105,13 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="https://avatars2.githubusercontent.com/u/37392164?s=400&amp;u=8867d7d03aeee8017cf41f1c942e12429c907e53&amp;v=4" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">John Doe</h1>
+			  <h1 class="header-author js-header-author">Dylan</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人生如戏，亦是看戏也是演习<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -118,13 +124,15 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/Dylan-haiji" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://blog.csdn.net/weixin_38937840" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/372787553" title="weixin"><i class="icon-weixin"></i></a>
 			        
 				</div>
 			</nav>
@@ -135,7 +143,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/tags">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -194,75 +202,10 @@ INSERT INTO `sys_order` VALUES (&apos;123456fdxw3456&apos;, &apos;秒杀&apos;, 
 INSERT INTO `sys_order` VALUES (&apos;1234td&apos;, &apos;双十一&apos;, &apos;代发货&apos;, &apos;22&apos;, &apos;1&apos;);</code></pre><h4 id="Dao创建"><a href="#Dao创建" class="headerlink" title="Dao创建"></a>Dao创建</h4><pre><code>public interface SysOrderMapper extends BaseMapper&lt;SysOrder&gt; {
 
     int updateLock(SysOrder sysOrder);
-}</code></pre><h4 id="Mapper文件"><a href="#Mapper文件" class="headerlink" title="Mapper文件"></a>Mapper文件</h4><pre><code>&lt;update id=&quot;updateLock&quot; parameterType=&quot;com.javayh.entity.SysOrder&quot;&gt;
-        update
-          sys_order
-        set
-          order_type=#{orderType},
-          version= version+1
-        where
-          order_num=#{orderNum}
-        and
-          version = #{version}
-    &lt;/update&gt;</code></pre><h4 id="Service实现"><a href="#Service实现" class="headerlink" title="Service实现"></a>Service实现</h4><pre><code>@Service
-public class SysOrderServiceImpl extends ServiceImpl&lt;SysOrderMapper, SysOrder&gt; implements ISysOrderService {
-
-    @Autowired
-    private SysOrderMapper sysOrderMapper;
-
-    @Override
-    public int updateLock(SysOrder sysOrder) {
-        return sysOrderMapper.updateLock(sysOrder);
-    }
-}</code></pre><h4 id="接口调用"><a href="#接口调用" class="headerlink" title="接口调用"></a>接口调用</h4><pre><code>@Autowired
-    private SysOrderMapper sysOrderMapper;
-    @Autowired
-    private ISysOrderService sysOrderService;
-    /**
-     * 流程：
-     * 1.根据订单号查询出订单
-     * 2.修改订单的某个值，这里存在并发
-     * 3.修改时判断版本号，如果这是有其他的线程已修改，
-     * 则本次修改失败，若无修改，则修改成功；对应本案例的order1 与 order2
-     * 此方法的实现主要是跟根据version字段进行区分，
-     * 若version以被修改，where version 时无匹配的字段，自然失败
-     */
-    @GetMapping(value = &quot;test&quot;)
-    public void contextLoads() {
-        //1.查询
-        SysOrder sysOrder1 = sysOrderMapper.selectById(&quot;123456fdxw3456&quot;);
-        System.out.println(sysOrder1);
-        //SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=秒杀, orderQuantity=1, version=1)
-
-        SysOrder sysOrder2 = sysOrderMapper.selectById(&quot;123456fdxw3456&quot;);
-        System.out.println(sysOrder2);
-        //SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=秒杀, orderQuantity=1, version=1)
-
-        //2.修改字段
-        sysOrder1.setOrderType(&quot;买一赠一&quot;);
-        System.out.println(sysOrder1);
-        //SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=买一赠一, orderQuantity=1, version=1)
-
-        sysOrder2.setOrderType(&quot;买五赠一&quot;);
-        System.out.println(sysOrder2);
-        //SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=买五赠一, orderQuantity=1, version=1)
-
-        //3.执行修改
-        int order1 = sysOrderService.updateLock(sysOrder1);
-        SysOrder sysOrder3 = sysOrderMapper.selectById(&quot;123456fdxw3456&quot;);
-        System.out.println(sysOrder3);
-        System.out.println(order1&gt;0 ? &quot;成功&quot;:&quot;失败&quot;);
-        /**
-         * SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=买一赠一, orderQuantity=1, version=2)
-         * 成功
-         * SysOrder(orderNum=123456fdxw3456, orderName=秒杀, orderType=买一赠一, orderQuantity=1, version=2)
-         * 失败
-         */
-        int order2 = sysOrderService.updateLock(sysOrder2);
-        SysOrder sysOrder4 = sysOrderMapper.selectById(&quot;123456fdxw3456&quot;);
-        System.out.println(sysOrder4);
-        System.out.println(order2&gt;0 ? &quot;成功&quot;:&quot;失败&quot;);
-    }</code></pre>
+}</code></pre>
+        
+          <a class="article-more-a" href="/2019/07/15/Mysql+Mybatis乐观锁/#more">more >></a>
+        
       
 
       
@@ -421,7 +364,7 @@ public class SysOrderServiceImpl extends ServiceImpl&lt;SysOrderMapper, SysOrder
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -535,27 +478,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://blog.csdn.net/weixin_38937840" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://github.com/Dylan-haiji" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>GitHub</a>
             </li>
           
         </ul>
@@ -566,7 +493,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">杨海吉&lt;br&gt;&lt;br&gt;要相信梦想一触即发&lt;br&gt;</div>
   	  	
     	</section>
     

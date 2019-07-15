@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="乐观锁Mysql + Mybatis实现乐观锁1.案例sqlSET FOREIGN_KEY_CHECKS=0;  -- ---------------------------- -- Table structure for sys_order -- ---------------------------- DROP TABLE IF EXISTS `sys_order`; CREATE TABLE">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-15T06:46:41.700Z">
+<meta property="og:updated_time" content="2019-07-15T08:55:22.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql + Mybatis实现乐观锁">
 <meta name="twitter:description" content="乐观锁Mysql + Mybatis实现乐观锁1.案例sqlSET FOREIGN_KEY_CHECKS=0;  -- ---------------------------- -- Table structure for sys_order -- ---------------------------- DROP TABLE IF EXISTS `sys_order`; CREATE TABLE">
@@ -48,11 +48,13 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="https://avatars2.githubusercontent.com/u/37392164?s=400&amp;u=8867d7d03aeee8017cf41f1c942e12429c907e53&amp;v=4" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		  <h1 class="header-author"><a href="/">Dylan</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">人生如戏，亦是看戏也是演习</p>
 		
 
 		<nav class="header-menu">
@@ -60,7 +62,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/tags">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -82,13 +84,15 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/Dylan-haiji" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://blog.csdn.net/weixin_38937840" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/372787553" title="weixin"><i class="icon-weixin"></i></a>
 		        
 			</div>
 		</nav>
@@ -106,11 +110,13 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="https://avatars2.githubusercontent.com/u/37392164?s=400&amp;u=8867d7d03aeee8017cf41f1c942e12429c907e53&amp;v=4" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">John Doe</h1>
+			  <h1 class="header-author js-header-author">Dylan</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人生如戏，亦是看戏也是演习<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -123,13 +129,15 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/Dylan-haiji" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://blog.csdn.net/weixin_38937840" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/372787553" title="weixin"><i class="icon-weixin"></i></a>
 			        
 				</div>
 			</nav>
@@ -140,7 +148,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/tags">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -197,7 +205,8 @@ INSERT INTO `sys_order` VALUES (&apos;123456fdxw3456&apos;, &apos;秒杀&apos;, 
 INSERT INTO `sys_order` VALUES (&apos;1234td&apos;, &apos;双十一&apos;, &apos;代发货&apos;, &apos;22&apos;, &apos;1&apos;);</code></pre><h4 id="Dao创建"><a href="#Dao创建" class="headerlink" title="Dao创建"></a>Dao创建</h4><pre><code>public interface SysOrderMapper extends BaseMapper&lt;SysOrder&gt; {
 
     int updateLock(SysOrder sysOrder);
-}</code></pre><h4 id="Mapper文件"><a href="#Mapper文件" class="headerlink" title="Mapper文件"></a>Mapper文件</h4><pre><code>&lt;update id=&quot;updateLock&quot; parameterType=&quot;com.javayh.entity.SysOrder&quot;&gt;
+}</code></pre><a id="more"></a>
+<h4 id="Mapper文件"><a href="#Mapper文件" class="headerlink" title="Mapper文件"></a>Mapper文件</h4><pre><code>&lt;update id=&quot;updateLock&quot; parameterType=&quot;com.javayh.entity.SysOrder&quot;&gt;
         update
           sys_order
         set
@@ -281,6 +290,11 @@ public class SysOrderServiceImpl extends ServiceImpl&lt;SysOrderMapper, SysOrder
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -435,7 +449,7 @@ public class SysOrderServiceImpl extends ServiceImpl&lt;SysOrderMapper, SysOrder
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -549,27 +563,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://blog.csdn.net/weixin_38937840" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://github.com/Dylan-haiji" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>GitHub</a>
             </li>
           
         </ul>
@@ -580,7 +578,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">杨海吉&lt;br&gt;&lt;br&gt;要相信梦想一触即发&lt;br&gt;</div>
   	  	
     	</section>
     
