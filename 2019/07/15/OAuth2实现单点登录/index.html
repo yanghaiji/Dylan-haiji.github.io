@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>OAuth2实现单点登录 | Hexo</title>
+  <title>OAuth2实现单点登录 | Java有货</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="OAuth2 权限统一验证OAuth2简介 OAuth2.0是OAuth协议的延续版本，但不向后兼容OAuth 2.0即完全废止了OAuth1.0。 OAuth2.0关注客户端开发者的简易性。要么通过组织在资源拥有者和HTTP服务商之间的被批准的交互动作代表用户，要么允许第三方应用代表用户获得访问的权限  关键名词 在详细讲解OAuth 2.0之前，需要了解几个专用名词。它们对读懂后面的讲解，尤其">
 <meta name="keywords" content="微服务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OAuth2实现单点登录">
 <meta property="og:url" content="http://yoursite.com/2019/07/15/OAuth2实现单点登录/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Java有货">
 <meta property="og:description" content="OAuth2 权限统一验证OAuth2简介 OAuth2.0是OAuth协议的延续版本，但不向后兼容OAuth 2.0即完全废止了OAuth1.0。 OAuth2.0关注客户端开发者的简易性。要么通过组织在资源拥有者和HTTP服务商之间的被批准的交互动作代表用户，要么允许第三方应用代表用户获得访问的权限  关键名词 在详细讲解OAuth 2.0之前，需要了解几个专用名词。它们对读懂后面的讲解，尤其">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190518205748170.png">
@@ -31,7 +31,7 @@
 <meta name="twitter:description" content="OAuth2 权限统一验证OAuth2简介 OAuth2.0是OAuth协议的延续版本，但不向后兼容OAuth 2.0即完全废止了OAuth1.0。 OAuth2.0关注客户端开发者的简易性。要么通过组织在资源拥有者和HTTP服务商之间的被批准的交互动作代表用户，要么允许第三方应用代表用户获得访问的权限  关键名词 在详细讲解OAuth 2.0之前，需要了解几个专用名词。它们对读懂后面的讲解，尤其">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190518205748170.png">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Java有货" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -180,7 +180,8 @@
           </div>
           <div id="js-content" class="content-ll">
             <article id="post-OAuth2实现单点登录" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+   
+   <div class="article-inner">
     
       <header class="article-header">
         
@@ -192,11 +193,47 @@
 
         
         <a href="/2019/07/15/OAuth2实现单点登录/" class="archive-article-date">
-  	<time datetime="2019-07-15T10:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
+  	<time datetime="2019-07-15T10:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15
+
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+			 
+        </span>
+
+ </time>
+	</a>
+       <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
         
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">2.8k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">14分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 
+		 <span id="busuanzi_container_page_pv">
+		  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	  </span> -->
+	   
+	  
       </header>
     
+	
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="OAuth2-权限统一验证"><a href="#OAuth2-权限统一验证" class="headerlink" title="OAuth2 权限统一验证"></a>OAuth2 权限统一验证</h2><h3 id="OAuth2简介"><a href="#OAuth2简介" class="headerlink" title="OAuth2简介"></a>OAuth2简介</h3><blockquote>
@@ -458,14 +495,25 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 John Doe
+    		&copy; 2019 Java有货
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
     </div>
   </div>
-</footer>
+  
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+ </footer>
     </div>
     <script>
 	var yiliaConfig = {
