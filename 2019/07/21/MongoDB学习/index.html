@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JavaYoHo</title>
+  <title>MongoDB学习记录 | JavaYoHo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JavaYoHo">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="MongoDB学习记录MongoRepository使用@Repository public interface SysMenuRepository extends MongoRepository&amp;lt;SysMenu,String&amp;gt; {      /**      * 模糊查询      * StartsWith    起始位置开始匹配      * EndsWith      结束位置">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB学习记录">
+<meta property="og:url" content="http://yoursite.com/2019/07/21/MongoDB学习/index.html">
 <meta property="og:site_name" content="JavaYoHo">
+<meta property="og:description" content="MongoDB学习记录MongoRepository使用@Repository public interface SysMenuRepository extends MongoRepository&amp;lt;SysMenu,String&amp;gt; {      /**      * 模糊查询      * StartsWith    起始位置开始匹配      * EndsWith      结束位置">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190721183820804.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-07-21T10:43:56.726Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaYoHo">
+<meta name="twitter:title" content="MongoDB学习记录">
+<meta name="twitter:description" content="MongoDB学习记录MongoRepository使用@Repository public interface SysMenuRepository extends MongoRepository&amp;lt;SysMenu,String&amp;gt; {      /**      * 模糊查询      * StartsWith    起始位置开始匹配      * EndsWith      结束位置">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190721183820804.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="JavaYoHo" type="application/atom+xml">
   
@@ -164,23 +171,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Docker从安装到入门到项目部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-MongoDB学习" class="article article-type-post " itemscope itemprop="blogPost">
    
    <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/15/Docker从安装到入门到项目部署/">Docker从安装到入门到项目部署</a>
+    <h1 class="article-title" itemprop="name">
+      MongoDB学习记录
     </h1>
   
 
         
-        <a href="/2019/07/15/Docker从安装到入门到项目部署/" class="archive-article-date">
-  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15
+        <a href="/2019/07/21/MongoDB学习/" class="archive-article-date">
+  	<time datetime="2019-07-21T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-21
+
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+			 
+        </span>
 
  </time>
 	</a>
@@ -192,7 +203,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">774字</span>
+        <span class="post-count">569字</span>
       </span>
     </span>
 
@@ -201,7 +212,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">3分</span>
+        <span class="post-count">2分</span>
       </span>
     </span>
 </div>
@@ -217,123 +228,205 @@
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><blockquote>
-<p>Docker Community<br>Edition（CE）非常适合希望开始使用Docker并尝试使用基于容器的应用程序的开发人员和小型团队。Docker<br>CE有三种类型的更新通道：stable，test和nightly： Stable为您提供一般可用性的最新版本。<br>测试提供在一般可用之前准备好进行测试的预发布。 Nightly为您提供下一个主要版本的最新正在进行的工作。 有关Docker<br>CE的更多信息，请参阅 Docker Community Edition。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/07/15/Docker从安装到入门到项目部署/#more">阅读全文 >></a>
-        
+        <h1 id="MongoDB学习记录"><a href="#MongoDB学习记录" class="headerlink" title="MongoDB学习记录"></a>MongoDB学习记录</h1><h2 id="MongoRepository使用"><a href="#MongoRepository使用" class="headerlink" title="MongoRepository使用"></a>MongoRepository使用</h2><pre><code>@Repository
+public interface SysMenuRepository extends MongoRepository&lt;SysMenu,String&gt; {
+
+    /**
+     * 模糊查询
+     * StartsWith    起始位置开始匹配
+     * EndsWith      结束位置
+     * @param code 匹配内容
+     * @return
+     */
+    List&lt;SysMenu&gt; findByCodeStartsWith(String code);
+
+}</code></pre><a id="more"></a>    
+<p><strong>示例</strong></p>
+<pre><code>@Service
+public class SysMenuService {
+    @Autowired
+    private SysMenuRepository sysMenuRepository;
+    @Autowired
+    private MgRepository mgRepository;
+    /**
+ * 新增
+ * @param sysMenu
+ * @return
+ */
+public SysMenu save(SysMenu sysMenu){
+    return sysMenuRepository.save(sysMenu);
+}
+
+/**
+ * 查询所有并分页
+ * @return
+ */
+public Page&lt;SysMenu&gt; findAll(Pageable pageable) {
+    return sysMenuRepository.findAll(pageable);
+}
+
+/**
+ * 模糊查询所有 分页
+ * @param pageable
+ * @return
+ */
+public Page&lt;SysMenu&gt; findPag(Pageable pageable) {
+    SysMenu sysMenu = new SysMenu();
+    sysMenu.setCode(&quot;e&quot;);
+    sysMenu.setId(&quot;e&quot;);
+    sysMenu.setPcode(&quot;qqqqq&quot;);
+    Example&lt;SysMenu&gt; example = Example.of(sysMenu,generater());
+    return sysMenuRepository.findAll(example,pageable);
+}
+/**
+ * 删除
+ * @param id
+ * @return
+ */
+public String delete(String id){
+    sysMenuRepository.deleteById(id);
+    boolean exists = sysMenuRepository.existsById(id);
+    return exists == false ? &quot;1&quot;:&quot;0&quot;;
+}
+
+/**
+ * StartsWith    起始位置开始匹配
+ * EndsWith      结束位置
+ * @param code
+ * @return
+ */
+public List&lt;SysMenu&gt; findByCodeStartsWith(String code){
+    return sysMenuRepository.findByCodeStartsWith(code);
+}
+
+private ExampleMatcher generater() {
+    return ExampleMatcher.matching() //构建对象
+            .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING) //改变默认字符串匹配方式：模糊查询
+            .withIgnoreCase(true) //改变默认大小写忽略方式：忽略大小写
+            .withMatcher(&quot;pcode&quot;, match-&gt;match.exact()) // 精确查询pcode，模糊查询其他
+//                .withMatcher(&quot;code&quot;, ExampleMatcher.GenericPropertyMatchers.regex()) // 查询
+//                .withMatcher(&quot;id&quot;, ExampleMatcher.GenericPropertyMatchers.regex()) // 查询
+//                .withMatcher(&quot;pcode&quot;, ExampleMatcher.GenericPropertyMatchers.regex()) // 查询
+            .withIgnoreNullValues();//hu忽略null
+}</code></pre><h2 id="MongoTemplate-使用"><a href="#MongoTemplate-使用" class="headerlink" title="MongoTemplate 使用"></a>MongoTemplate 使用</h2><pre><code>public abstract class MongodbBaseDao&lt;T extends Serializable&gt;{
+
+    /**
+     * spring mongodb　集成操作类　
+     */
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
+    /**
+     * 通过条件查询实体(集合)
+     *
+     * @param query
+     */
+    public List&lt;T&gt; find(Query query) {
+        return mongoTemplate.find(query,this.getEntityClass());
+    }
+
+    /**
+     * 通过一定的条件查询一个实体
+     *
+     * @param query
+     * @return
+     */
+    public T findOne(Query query) {
+        return mongoTemplate.findOne(query, this.getEntityClass());
+    }
+
+    /**
+     * 通过条件查询更新数据
+     *
+     * @param query
+     * @param update
+     * @return
+     */
+    public void update(Query query, Update update) {
+        mongoTemplate.upsert(query, update, this.getEntityClass());
+    }
+
+    /**
+     * 保存一个对象到mongodb
+     *
+     * @param bean
+     * @return
+     */
+    public T save(T bean) {
+        mongoTemplate.save(bean);
+        return bean;
+    }
+
+    /**
+     * 通过ID获取记录
+     *
+     * @param id
+     * @return
+     */
+    public T get(String id) {
+        return mongoTemplate.findById(id, this.getEntityClass());
+    }
+
+    /**
+     * 通过ID获取记录,并且指定了集合名(表的意思)
+     *
+     * @param id
+     * @param collectionName
+     *            集合名
+     * @return
+     */
+    public T get(String id, String collectionName) {
+        return mongoTemplate.findById(id, this.getEntityClass(), collectionName);
+    }
+
+    /**
+     * 获取需要操作的实体类class
+     *
+     * @return
+     */
+    protected abstract Class&lt;T&gt; getEntityClass();
+
+}</code></pre><h2 id="Criteria-说明"><a href="#Criteria-说明" class="headerlink" title="Criteria 说明"></a>Criteria 说明</h2><p><img src="https://img-blog.csdnimg.cn/20190721183820804.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h4><pre><code>/**
+ * 使用  Criteria 示例
+ * @param id
+ * @return
+ */
+public SysMenu find(String id){
+    Criteria criteria = new Criteria();
+    criteria.where(&quot;id&quot;).is(id);
+    Query query = Query.query(criteria);
+    return mgRepository.findOne(query);
+} </code></pre><p>详细请看:<a href="https://docs.spring.io/spring-data/data-mongo/docs/current/api/org/springframework/data/mongodb/core/query/Criteria.html" target="_blank" rel="noopener">https://docs.spring.io/spring-data/data-mongo/docs/current/api/org/springframework/data/mongodb/core/query/Criteria.html</a></p>
+
       
 
       
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/15/Docker从安装到入门到项目部署/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixinprd.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SpringBoot + MybatisPlus实现敏捷开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-   
-   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/15/SpringBoot + MybatisPlus实现敏捷开发/">SpringBoot + MybatisPlus实现敏捷开发</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/15/SpringBoot + MybatisPlus实现敏捷开发/" class="archive-article-date">
-  	<time datetime="2019-07-15T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15
-
- </time>
-	</a>
-       <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">2.2k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">10分</span>
-      </span>
-    </span>
-</div>
-          
-        <!-- 添加完成 
-		 <span id="busuanzi_container_page_pv">
-		  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-	  </span> -->
-	   
-	  
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MyBatisPlus简洁"><a href="#MyBatisPlus简洁" class="headerlink" title="MyBatisPlus简洁"></a>MyBatisPlus简洁</h2><blockquote>
-<p>MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。<br><strong>愿景</strong><br>我们的愿景是成为 MyBatis 最好的搭档，就像 魂斗罗 中的 1P、2P，基友搭配，效率翻倍。<img src="https://img-blog.csdnimg.cn/20190619172039860.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODkzNzg0MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/07/15/SpringBoot + MybatisPlus实现敏捷开发/#more">阅读全文 >></a>
-        
-      
-
       
     </div>
     <div class="article-info article-info-index">
@@ -343,10 +436,6 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
         		</li>
@@ -357,16 +446,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/15/SpringBoot + MybatisPlus实现敏捷开发/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/21/MongoDB学习/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/20/RabbitMq/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Springboot优美整合RabbitMQ</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -386,12 +534,30 @@
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2019/07/21/MongoDB学习/",
+  owner: 'Dylan-haiji',
+  repo: 'dylan-haiji.github.io',
+  oauth: {
+    client_id: 'c31ff2109b85766a95b1',
+    client_secret: 'f4bebdef2c89e7364c70c90f3a105f5374be1e1c',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -425,8 +591,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
